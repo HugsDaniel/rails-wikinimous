@@ -1,10 +1,18 @@
-<h1><%= @article.title %></h1>
-<h3>Description :</h3>
-<p><%= @article.content %></p>
-<p> Created at : <%= @article.created_at %> </p>
-
-<%= link_to 'Edit', edit_article_path(@article) %>
--
-<i class= "fa fa-pencil"> <%= link_to 'Delete', article_path(@article), method: :delete,  data: { confirm: "Are you sure?" } %> </i>
-<br>
-<%= link_to "Back", articles_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <article>
+        <h1>
+          <%= @article.title %>
+          <small>
+            <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_article_path(@article) %>
+            <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, article_path(@article), method: :delete,  data: { confirm: "Are you sure?" } %>
+          </small>
+        </h1>
+        <hr>
+        <%= Kramdown::Document.new(@article.content).to_html.html_safe %>
+      </article>
+      <%= link_to 'Back', root_path %>
+    </div>
+  </div>
+</div>

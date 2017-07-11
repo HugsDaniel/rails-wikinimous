@@ -1,7 +1,16 @@
-<h1>Here are all your god damn articles</h1>
-<ul><% @articles.each do |article| %>
-  <li><%= link_to article.title, article_path(article)  %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+
+      <article><% @articles.each do |article| %>
+        <h2><%= link_to article.title, article_path(article)  %></h2>
+        <%= article.content %>
+        <% end %>
+    </article>
+
+    </div>
+  </div>
+</div>
+
 <%= link_to 'New article', new_article_path %>
 <p><%= link_to 'Go back home', root_path %></p>

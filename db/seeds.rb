@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 10.times do
-  Article.create(
+  Article.create!(
   {
     title: Faker::HitchhikersGuideToTheGalaxy.specie,
     content: Faker::HitchhikersGuideToTheGalaxy.quote
