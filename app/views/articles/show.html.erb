@@ -1,10 +1,10 @@
-<h1><%= @task.title %></h1>
+<h1><%= @article.title %></h1>
 <h3>Description :</h3>
-<p><%= @task.description %></p>
-<p> Created at : <%= @task.created_at %> </p>
+<p><%= @article.content %></p>
+<p> Created at : <%= @article.created_at %> </p>
 
-<%= link_to 'Edit', edit_task_path(@task) %>
+<%= link_to 'Edit', edit_article_path(@article) %>
 -
-<%= link_to 'Delete', task_path(@task), method: :delete,  data: { confirm: "Are you sure?" } %>
+<i class= "fa fa-pencil"> <%= link_to 'Delete', article_path(@article), method: :delete,  data: { confirm: "Are you sure?" } %> </i>
 <br>
-<%= link_to "Back to all tasks", tasks_path %>
+<%= link_to "Back", articles_path %>
